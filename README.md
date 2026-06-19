@@ -41,7 +41,7 @@ Chạy xong, mở browser `http://VPS-IP:20128` → copy API key → `opencode -
 Mở **PowerShell** trên laptop, chạy 1 dòng:
 
 ```powershell
-icacls "C:\Users\Admin\Downloads\*.pem" /reset; icacls "C:\Users\Admin\Downloads\*.pem" /inheritance:r; icacls "C:\Users\Admin\Downloads\*.pem" /grant "$env:USERNAME:R,W"
+icacls "C:\Users\Admin\Downloads\*.pem" /reset; icacls "C:\Users\Admin\Downloads\*.pem" /inheritance:r; icacls "C:\Users\Admin\Downloads\*.pem" /grant "${env:USERNAME}:R"
 ```
 
 ### Bước 3: Kết nối VSCode đến VPS
@@ -68,7 +68,7 @@ Giờ bạn đang ở trong VSCode, terminal đang chạy trên VPS (thấy `ubu
 Chạy 1 lệnh này trong terminal VSCode:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/your-repo/opencode-stack/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/mmailduyt-cpu/opencode-stack/master/setup.sh | bash
 ```
 
 **Lệnh này tự động:**

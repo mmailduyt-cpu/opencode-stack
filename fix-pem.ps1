@@ -19,6 +19,6 @@ takeown /f $PemPath | Out-Null
 # Reset and set only current user read access
 icacls $PemPath /reset
 icacls $PemPath /inheritance:r
-icacls $PemPath /grant "${env:USERNAME}:(R,W)"
+icacls $PemPath /grant "${env:USERNAME}:(R)"
 
 Write-Host "Done! You can now use this .pem file." -ForegroundColor Green
