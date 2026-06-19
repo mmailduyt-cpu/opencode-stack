@@ -17,6 +17,16 @@ Tự động chuyển đổi AI providers qua 9Router, không lo hết quota.
 
 ## 2. Các bước làm (từ VPS mới tinh)
 
+### Cách nhanh nhất: 1 lệnh
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/mmailduyt-cpu/opencode-stack/master/setup.sh | bash
+```
+
+Chạy xong, mở browser `http://VPS-IP:20128` → copy API key → `opencode -m 9r/mmf/mimo-auto`
+
+### Cách chi tiết:
+
 ### Bước 1: Tạo VPS trên AWS Lightsail
 
 1. Vào https://lightsail.aws.amazon.com
