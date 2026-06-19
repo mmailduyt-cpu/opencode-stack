@@ -1,0 +1,37 @@
+services:
+  9router:
+    image: decolua/9router:latest
+    container_name: 9router
+    restart: unless-stopped
+    ports:
+      - "20128:20128"
+    volumes:
+      - 9router-data:/root/.9router
+    networks:
+      - opencode-net
+
+  opencode:
+    image: smanx/opencode:latest
+    container_name: opencode
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - OPENCODE_HOSTNAME=0.0.0.0
+      - OPENCODE_PORT=3000
+    volumes:
+      - opencode-config:/root/.config/opencode
+      - opencode-data:/root/.local/share/opencode
+    depends_on:
+      - 9router
+    networks:
+      - opencode-net
+
+volumes:
+  9router-data:
+  opencode-config:
+  opencode-data:
+
+networks:
+  opencode-net:
+    driver: bridge
