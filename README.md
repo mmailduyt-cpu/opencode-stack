@@ -76,7 +76,14 @@ curl -fsSL https://raw.githubusercontent.com/mmailduyt-cpu/opencode-stack/master
 - Chạy 9Router (cổng 20128)
 - Cài OpenCode
 - Cấu hình OpenCode kết nối 9Router
-- Thêm PATH
+- Thêm opencode vào PATH (~/.bashrc)
+
+:warning: **Quan trọng:** Sau khi script chạy xong, chạy `source ~/.bashrc` để nạp PATH. Nếu quên, lệnh `opencode` sẽ báo `"Command not found"`.
+
+Nếu vẫn không được, dùng đường dẫn đầy đủ:
+```bash
+~/.opencode/bin/opencode -m 9r/mmf/mimo-auto
+```
 
 ### Bước 5: Cấu hình 9Router
 
